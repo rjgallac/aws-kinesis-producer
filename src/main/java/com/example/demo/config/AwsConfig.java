@@ -27,26 +27,4 @@ public class AwsConfig {
                 .build();
     }
 
-    @Bean
-    public AmazonDynamoDB dynamoDBClientAsync() {
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("dummy", "dummy");
-        AWSStaticCredentialsProvider awsStaticCredentialsProvider = new AWSStaticCredentialsProvider(awsCreds);
-
-        return AmazonDynamoDBClientBuilder.standard()
-                .withCredentials(awsStaticCredentialsProvider)
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:4566", "us-west-2"))
-                .build();
-    }
-
-    @Bean
-    public AmazonCloudWatch cloudWatch() {
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("dummy", "dummy");
-        AWSStaticCredentialsProvider awsStaticCredentialsProvider = new AWSStaticCredentialsProvider(awsCreds);
-
-        return AmazonCloudWatchClientBuilder
-                .standard()
-                .withCredentials(awsStaticCredentialsProvider)
-                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration("http://localhost:4566", "us-west-2"))
-                .build();
-    }
 }
