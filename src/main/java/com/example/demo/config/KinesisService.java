@@ -16,8 +16,7 @@ public class KinesisService {
     @Autowired
     private AmazonKinesis amazonKinesis;
 
-    @PostConstruct
-    public void setupKinesis() throws InterruptedException {
+    public void startinesis() throws InterruptedException {
 
         while (true) {
             long createTime = System.currentTimeMillis();
